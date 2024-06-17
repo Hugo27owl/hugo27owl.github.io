@@ -1,6 +1,6 @@
 ## Running React on Replit
 
-[React](https://reactjs.org/) is a popular JavaScript library for building user interfaces.
+[React](https://react.dev) is a popular JavaScript library for building user interfaces.
 
 [Vite](https://vitejs.dev/) is a blazing fast frontend build tool that includes features like Hot Module Reloading (HMR), optimized builds, and TypeScript support out of the box.
 
@@ -15,3 +15,7 @@ By default, Replit runs the `dev` script, but you can configure it by changing t
 ### Typescript
 
 Just rename any file from `.jsx` to `.tsx`. You can also try our [TypeScript Template](https://replit.com/@replit/React-TypeScript)
+
+
+##About this 
+Well, it is a fun gala game that anyone can play here.
