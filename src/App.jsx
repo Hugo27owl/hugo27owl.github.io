@@ -1,12 +1,25 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Phaser from 'phaser';
-import './App.css'; 
+import './App.css';
 import { LaserGroup } from './LaserGroup';
 import { EnemyGroup } from './EnemyGroup';
 import { playerDestroyed, newGame } from './functions';
 
 const App = () => {
+  const [lives, setLives] = useState(3);
+  const [startGame, setStartGame] = useState(false);
+
+  const handleLivesChange = (e) => {
+    setLives(parseInt(e.target.value, 10));
+  };
+
+  const handleStartGame = () => {
+    setStartGame(true);
+  };
+
   useEffect(() => {
+    if (!startGame) return;
+
     const config = {
       type: Phaser.AUTO,
       width: 600,
@@ -59,8 +72,8 @@ const App = () => {
 
       this.score = 0;
       this.scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#FFFF00' });
-      this.lives = 3;
-      this.livesText = this.add.text(16, 48, 'lives: 3', { fontSize: '32px', fill: '#FFFF00' });
+      this.lives = lives; // Use the input value for lives
+      this.livesText = this.add.text(16, 48, lives, ${this.lives}, { fontSize: '32px', fill: '#FFFF00' });
       this.restartText = this.add.text(40, 300, 'Press Shift to Try Again', { fontSize: '36px', fill: '#FFFF00' });
       this.restartText.visible = false;
       this.gameOverText = this.add.text(175, 200, 'Game Over', { fontSize: '50px', fill: '#FFFF00' });
@@ -119,10 +132,27 @@ const App = () => {
     return () => {
       game.destroy(true);
     };
-  }, []);
+  }, [startGame, lives]);
 
   return (
-    <div id="game-container" />
+    <div>
+      {!startGame && (
+        <div>
+          <input
+            type="number"
+            value={lives}
+            onChange={handleLivesChange}
+            min="1"
+            max="10"
+            style={{ fontSize: '24px', padding: '10px', margin: '20px' }}
+          />
+          <button onClick={handleStartGame} style={{ fontSize: '24px', padding: '10px' }}>
+            Start Game
+          </button>
+        </div>
+      )}
+      {startGame && <div id="game-container" />}
+    </div>
   );
 };
 
