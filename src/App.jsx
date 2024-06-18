@@ -73,7 +73,7 @@ const App = () => {
       this.score = 0;
       this.scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#FFFF00' });
       this.lives = lives; // Use the input value for lives
-      this.livesText = this.add.text(16, 48, lives, ${this.lives}, { fontSize: '32px', fill: '#FFFF00' });
+      this.livesText = this.add.text(16, 48, `lives: ${this.lives}`, { fontSize: '32px', fill: '#FFFF00' });
       this.restartText = this.add.text(40, 300, 'Press Shift to Try Again', { fontSize: '36px', fill: '#FFFF00' });
       this.restartText.visible = false;
       this.gameOverText = this.add.text(175, 200, 'Game Over', { fontSize: '50px', fill: '#FFFF00' });
