@@ -138,7 +138,7 @@ const App = () => {
     <div>
       {!startGame && (
         <div>
-         Lives: <input
+        <h1>Lives🤫</h1> <input
             type="number"
             value={lives}
             onChange={handleLivesChange}
