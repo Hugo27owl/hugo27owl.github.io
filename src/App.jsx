@@ -138,7 +138,7 @@ const App = () => {
     <div>
       {!startGame && (
         <div>
-          <input
+         Lives: <input
             type="number"
             value={lives}
             onChange={handleLivesChange}
@@ -147,7 +147,7 @@ const App = () => {
             style={{ fontSize: '24px', padding: '10px', margin: '20px' }}
           />
           <button onClick={handleStartGame} style={{ fontSize: '24px', padding: '10px' }}>
-            Start Game
+            Start Game!🥳
           </button>
         </div>
       )}
