@@ -80,7 +80,7 @@ const App = () => {
       this.gameOverText.visible = false;
 
       this.emitter = this.add.particles(0, 0, 'explosion', {
-        frame: ['red', 'yellow', 'green', 'blue', 'purple'],
+        frame: ['red', 'yellow', 'green', 'blue', 'puce','white'],
         lifespan: 1000,
         speed: { min: 50, max: 100 },
         emitting: false
