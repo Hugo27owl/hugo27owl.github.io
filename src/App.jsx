@@ -138,12 +138,12 @@ const App = () => {
     <div>
       {!startGame && (
         <div>
-        <h1>Lives🤫</h1> <input
+        <h1>Lives🤫</h1>Space = Shoot (999 max lives) <input
             type="number"
             value={lives}
             onChange={handleLivesChange}
             min="1"
-            max="10"
+            max="999"
             style={{ fontSize: '24px', padding: '10px', margin: '20px' }}
           />
           <button onClick={handleStartGame} style={{ fontSize: '24px', padding: '10px' }}>
