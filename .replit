@@ -15,5 +15,13 @@ build = ["npm", "run", "build"]
 publicDir = "dist"
 
 [[ports]]
+localPort = 3
+externalPort = 3002
+
+[[ports]]
 localPort = 5173
 externalPort = 80
+
+[auth]
+pageEnabled = false
+buttonEnabled = false
