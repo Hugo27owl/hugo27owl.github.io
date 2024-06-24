@@ -80,7 +80,7 @@ const App = () => {
       this.gameOverText.visible = false;
 
       this.emitter = this.add.particles(0, 0, 'explosion', {
-        frame: ['red', 'yellow', 'green', 'blue', 'puce','white'],
+        frame: ['red', 'yellow', 'green', 'blue', 'purple'],
         lifespan: 1000,
         speed: { min: 50, max: 100 },
         emitting: false
@@ -94,6 +94,11 @@ const App = () => {
         laser.disableBody(true, true);
         this.score += 50;
         this.scoreText.setText('score: ' + this.score);
+
+        // Increase difficulty after every 100 points
+        // if (this.score % 100 === 0 && this.score !== 0) {
+        //   this.enemyGroup.increaseDifficulty();
+        // }
       });
 
       this.physics.add.overlap(this.player, this.enemyGroup, (player, enemy) => {
